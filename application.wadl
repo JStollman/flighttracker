@@ -1,0 +1,1500 @@
+
+
+
+<resources base="https://api.flightstats.com/flex/flightstatus/rest/">
+<resource path="/v2/json/flight">
+<resource path="/tracks/{carrier}/{flight}/dep/{year}/{month}/{day}">
+ $flight" style="template" type=":string"/>
+ $carrier" style="template" type=":string"/>
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $day" style="template" type=":int"/>
+<method id="flightTrack_dep" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $hourOfDay" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $numHours" style="query" type=":string"/>
+ $includeFlightPlan" style="query" type=":string"/>
+ $airport" style="query" type=":string"/>
+ $maxPositions" style="query" type=":string"/>
+ $maxPositionAgeMinutes" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/json; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/tracks/{carrier}/{flight}/arr/{year}/{month}/{day}">
+ $flight" style="template" type=":string"/>
+ $carrier" style="template" type=":string"/>
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $day" style="template" type=":int"/>
+<method id="flightTrack_arr" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $hourOfDay" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $numHours" style="query" type=":string"/>
+ $includeFlightPlan" style="query" type=":string"/>
+ $airport" style="query" type=":string"/>
+ $maxPositions" style="query" type=":string"/>
+ $maxPositionAgeMinutes" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/json; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/track/{flightId}">
+ $flightId" style="template" type=":long"/>
+<method id="flightTrack_fhid" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $includeFlightPlan" style="query" type=":string"/>
+ $maxPositions" style="query" type=":string"/>
+ $maxPositionAgeMinutes" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/json; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/status/{flightId}">
+ $flightId" style="template" type=":long"/>
+<method id="flightStatus_fhid" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/json; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/status/{carrier}/{flight}/dep/{year}/{month}/{day}">
+ $flight" style="template" type=":string"/>
+ $carrier" style="template" type=":string"/>
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $day" style="template" type=":int"/>
+<method id="flightStatus_dep" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $airport" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/json; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/status/{carrier}/{flight}/arr/{year}/{month}/{day}">
+ $flight" style="template" type=":string"/>
+ $carrier" style="template" type=":string"/>
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $day" style="template" type=":int"/>
+<method id="flightStatus_arr" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $airport" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/json; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+</resource>
+<resource path="/resources">
+<method id="getAllApis" $GET">
+<response>
+<representation mediaType="application/json; charset=UTF-8"/>
+<representation mediaType="application/xml; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/v2/xml/flightsNear">
+<resource path="/{topLat}/{leftLon}/{bottomLat}/{rightLon}">
+ $topLat" style="template" type=":double"/>
+ $leftLon" style="template" type=":double"/>
+ $rightLon" style="template" type=":double"/>
+ $bottomLat" style="template" type=":double"/>
+<method id="flightsNear_box" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/xml; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/{lat}/{lon}/{miles}">
+ $lon" style="template" type=":double"/>
+ $lat" style="template" type=":double"/>
+ $miles" style="template" type=":int"/>
+<method id="flightsNear_radius" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/xml; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+</resource>
+<resource path="/resources.xml">
+<method id="getAllApis" $GET">
+<response>
+<representation mediaType="application/xml"/>
+</response>
+</method>
+</resource>
+<resource path="/resources/v2/flightsNear/">
+<method id="getHelp" $GET">
+<response>
+<representation mediaType="application/json; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/v2/xml/fleet">
+<resource path="/tracks/{carrier}">
+ $carrier" style="template" type=":string"/>
+<method id="fleetTracks" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $includeFlightPlan" style="query" type=":string"/>
+ $maxPositions" style="query" type=":string"/>
+ $maxPositionAgeMinutes" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $codeshares" style="query" type=":string"/>
+ $airport" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/xml; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/status/{carrier}/dep/{year}/{month}/{day}/{hourOfDay}">
+ $carrier" style="template" type=":string"/>
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $hourOfDay" style="template" type=":int"/>
+ $day" style="template" type=":int"/>
+<method id="fleetStatus_dep" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $numHours" style="query" type=":string"/>
+ $codeshares" style="query" type=":string"/>
+ $airport" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/xml; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+</resource>
+<resource path="/v2/jsonp/airport/">
+<resource path="/tracks/{airport}/dep">
+ $airport" style="template" type=":string"/>
+<method id="airportTracks_dep" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $carrier" style="query" type=":string"/>
+ $includeFlightPlan" style="query" type=":string"/>
+ $maxPositions" style="query" type=":string"/>
+ $maxPositionAgeMinutes" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $callback" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/x-javascript; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/tracks/{airport}/arr">
+ $airport" style="template" type=":string"/>
+<method id="airportTracks_arr" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $carrier" style="query" type=":string"/>
+ $includeFlightPlan" style="query" type=":string"/>
+ $maxPositions" style="query" type=":string"/>
+ $maxPositionAgeMinutes" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $callback" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/x-javascript; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/status/{airport}/dep/{year}/{month}/{day}/{hourOfDay}">
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $hourOfDay" style="template" type=":int"/>
+ $day" style="template" type=":int"/>
+ $airport" style="template" type=":string"/>
+<method id="airportStatus_dep" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $numHours" style="query" type=":string"/>
+ $carrier" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $callback" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/x-javascript; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/status/{airport}/arr/{year}/{month}/{day}/{hourOfDay}">
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $hourOfDay" style="template" type=":int"/>
+ $day" style="template" type=":int"/>
+ $airport" style="template" type=":string"/>
+<method id="airportStatus_arr" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $numHours" style="query" type=":string"/>
+ $carrier" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $callback" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/x-javascript; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+</resource>
+<resource path="/resources.json">
+<method id="getAllApis" $GET">
+<response>
+<representation mediaType="application/json"/>
+</response>
+</method>
+</resource>
+<resource path="/v2/route/">
+<resource path="/status/{departureAirport}/{arrivalAirport}/dep/{year}/{month}/{day}">
+ $departureAirport" style="template" type=":string"/>
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $arrivalAirport" style="template" type=":string"/>
+ $day" style="template" type=":int"/>
+<method id="routeStatus_departing" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $hourOfDay" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $numHours" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="response" mediaType="*/*"/>
+</response>
+</method>
+</resource>
+<resource path="/status/{departureAirport}/{arrivalAirport}/arr/{year}/{month}/{day}">
+ $departureAirport" style="template" type=":string"/>
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $arrivalAirport" style="template" type=":string"/>
+ $day" style="template" type=":int"/>
+<method id="routeStatus_arriving" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $hourOfDay" style="query" type=":string"/>
+ $numHours" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="response" mediaType="*/*"/>
+</response>
+</method>
+</resource>
+</resource>
+<resource path="/v2/jsonp/flight">
+<resource path="/tracks/{carrier}/{flight}/dep/{year}/{month}/{day}">
+ $flight" style="template" type=":string"/>
+ $carrier" style="template" type=":string"/>
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $day" style="template" type=":int"/>
+<method id="flightTrack_dep" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $hourOfDay" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $numHours" style="query" type=":string"/>
+ $includeFlightPlan" style="query" type=":string"/>
+ $airport" style="query" type=":string"/>
+ $maxPositions" style="query" type=":string"/>
+ $maxPositionAgeMinutes" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $callback" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/x-javascript; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/tracks/{carrier}/{flight}/arr/{year}/{month}/{day}">
+ $flight" style="template" type=":string"/>
+ $carrier" style="template" type=":string"/>
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $day" style="template" type=":int"/>
+<method id="flightTrack_arr" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $hourOfDay" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $numHours" style="query" type=":string"/>
+ $includeFlightPlan" style="query" type=":string"/>
+ $airport" style="query" type=":string"/>
+ $maxPositions" style="query" type=":string"/>
+ $maxPositionAgeMinutes" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $callback" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/x-javascript; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/track/{flightId}">
+ $flightId" style="template" type=":long"/>
+<method id="flightTrack_fhid" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $includeFlightPlan" style="query" type=":string"/>
+ $maxPositions" style="query" type=":string"/>
+ $maxPositionAgeMinutes" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $callback" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/x-javascript; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/status/{flightId}">
+ $flightId" style="template" type=":long"/>
+<method id="flightStatus_fhid" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $callback" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/x-javascript; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/status/{carrier}/{flight}/dep/{year}/{month}/{day}">
+ $flight" style="template" type=":string"/>
+ $carrier" style="template" type=":string"/>
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $day" style="template" type=":int"/>
+<method id="flightStatus_dep" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $airport" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $callback" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/x-javascript; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/status/{carrier}/{flight}/arr/{year}/{month}/{day}">
+ $flight" style="template" type=":string"/>
+ $carrier" style="template" type=":string"/>
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $day" style="template" type=":int"/>
+<method id="flightStatus_arr" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $airport" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $callback" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/x-javascript; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+</resource>
+<resource path="/v2/jsonp/flightextended">
+<resource path="/multiple">
+<method id="flightStatus_fhid" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $flightIds" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $callback" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/x-javascript; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+</resource>
+<resource path="/v2/jsonp/fleet/">
+<resource path="tracks/{carrier}">
+ $carrier" style="template" type=":string"/>
+<method id="fleetTracks" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $includeFlightPlan" style="query" type=":string"/>
+ $maxPositions" style="query" type=":string"/>
+ $maxPositionAgeMinutes" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $codeshares" style="query" type=":string"/>
+ $airport" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $callback" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/x-javascript; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="status/{carrier}/dep/{year}/{month}/{day}/{hourOfDay}">
+ $carrier" style="template" type=":string"/>
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $hourOfDay" style="template" type=":int"/>
+ $day" style="template" type=":int"/>
+<method id="fleetStatus_dep" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $numHours" style="query" type=":string"/>
+ $codeshares" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $airport" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $callback" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/x-javascript; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+</resource>
+<resource path="/v2/flightextended/">
+<resource path="/multiple">
+<method id="flightStatusExtended_multiple" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $flightIds" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="response" mediaType="*/*"/>
+</response>
+</method>
+</resource>
+</resource>
+<resource path="/v2/json/route">
+<resource path="/status/{departureAirport}/{arrivalAirport}/dep/{year}/{month}/{day}">
+ $departureAirport" style="template" type=":string"/>
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $arrivalAirport" style="template" type=":string"/>
+ $day" style="template" type=":int"/>
+<method id="routeStatus_departing" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $hourOfDay" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $numHours" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/json; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/status/{departureAirport}/{arrivalAirport}/arr/{year}/{month}/{day}">
+ $departureAirport" style="template" type=":string"/>
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $arrivalAirport" style="template" type=":string"/>
+ $day" style="template" type=":int"/>
+<method id="routeStatus_arriving" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $hourOfDay" style="query" type=":string"/>
+ $numHours" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/json; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+</resource>
+<resource path="/resources/v2/flight/">
+<method id="getHelp" $GET">
+<response>
+<representation mediaType="application/json; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/v2/flightsNear/">
+<resource path="/{topLat}/{leftLon}/{bottomLat}/{rightLon}">
+ $topLat" style="template" type=":double"/>
+ $leftLon" style="template" type=":double"/>
+ $rightLon" style="template" type=":double"/>
+ $bottomLat" style="template" type=":double"/>
+<method id="flightsNear_box" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="response" mediaType="*/*"/>
+</response>
+</method>
+</resource>
+<resource path="/{lat}/{lon}/{miles}">
+ $lon" style="template" type=":double"/>
+ $lat" style="template" type=":double"/>
+ $miles" style="template" type=":int"/>
+<method id="flightsNear_radius" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="response" mediaType="*/*"/>
+</response>
+</method>
+</resource>
+</resource>
+<resource path="/v2/airport/">
+<resource path="/tracks/{airport}/dep">
+ $airport" style="template" type=":string"/>
+<method id="airportTracks_dep" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $carrier" style="query" type=":string"/>
+ $includeFlightPlan" style="query" type=":string"/>
+ $maxPositions" style="query" type=":string"/>
+ $maxPositionAgeMinutes" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="response" mediaType="*/*"/>
+</response>
+</method>
+</resource>
+<resource path="/tracks/{airport}/arr">
+ $airport" style="template" type=":string"/>
+<method id="airportTracks_arr" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $carrier" style="query" type=":string"/>
+ $includeFlightPlan" style="query" type=":string"/>
+ $maxPositions" style="query" type=":string"/>
+ $maxPositionAgeMinutes" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="response" mediaType="*/*"/>
+</response>
+</method>
+</resource>
+<resource path="/status/{airport}/dep/{year}/{month}/{day}/{hourOfDay}">
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $hourOfDay" style="template" type=":int"/>
+ $day" style="template" type=":int"/>
+ $airport" style="template" type=":string"/>
+<method id="airportStatus_dep" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $numHours" style="query" type=":string"/>
+ $carrier" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="response" mediaType="*/*"/>
+</response>
+</method>
+</resource>
+<resource path="/status/{airport}/arr/{year}/{month}/{day}/{hourOfDay}">
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $hourOfDay" style="template" type=":int"/>
+ $day" style="template" type=":int"/>
+ $airport" style="template" type=":string"/>
+<method id="airportStatus_arr" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $numHours" style="query" type=":string"/>
+ $carrier" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="response" mediaType="*/*"/>
+</response>
+</method>
+</resource>
+</resource>
+<resource path="/v2/xml/airport">
+<resource path="/tracks/{airport}/dep">
+ $airport" style="template" type=":string"/>
+<method id="airportTracks_dep" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $carrier" style="query" type=":string"/>
+ $includeFlightPlan" style="query" type=":string"/>
+ $maxPositions" style="query" type=":string"/>
+ $maxPositionAgeMinutes" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/xml; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/tracks/{airport}/arr">
+ $airport" style="template" type=":string"/>
+<method id="airportTracks_arr" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $carrier" style="query" type=":string"/>
+ $includeFlightPlan" style="query" type=":string"/>
+ $maxPositions" style="query" type=":string"/>
+ $maxPositionAgeMinutes" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/xml; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/status/{airport}/dep/{year}/{month}/{day}/{hourOfDay}">
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $hourOfDay" style="template" type=":int"/>
+ $day" style="template" type=":int"/>
+ $airport" style="template" type=":string"/>
+<method id="airportStatus_dep" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $numHours" style="query" type=":string"/>
+ $carrier" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/xml; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/status/{airport}/arr/{year}/{month}/{day}/{hourOfDay}">
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $hourOfDay" style="template" type=":int"/>
+ $day" style="template" type=":int"/>
+ $airport" style="template" type=":string"/>
+<method id="airportStatus_arr" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $numHours" style="query" type=":string"/>
+ $carrier" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/xml; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+</resource>
+<resource path="/v2/jsonp/flightsNear">
+<resource path="/{topLat}/{leftLon}/{bottomLat}/{rightLon}">
+ $topLat" style="template" type=":double"/>
+ $leftLon" style="template" type=":double"/>
+ $rightLon" style="template" type=":double"/>
+ $bottomLat" style="template" type=":double"/>
+<method id="flightsNear_box" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $callback" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/x-javascript; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/{lat}/{lon}/{miles}">
+ $lon" style="template" type=":double"/>
+ $lat" style="template" type=":double"/>
+ $miles" style="template" type=":int"/>
+<method id="flightsNear_radius" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $callback" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/x-javascript; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+</resource>
+<resource path="/v2/json/airport">
+<resource path="/tracks/{airport}/dep">
+ $airport" style="template" type=":string"/>
+<method id="airportTracks_dep" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $carrier" style="query" type=":string"/>
+ $includeFlightPlan" style="query" type=":string"/>
+ $maxPositions" style="query" type=":string"/>
+ $maxPositionAgeMinutes" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/json; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/tracks/{airport}/arr">
+ $airport" style="template" type=":string"/>
+<method id="airportTracks_arr" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $carrier" style="query" type=":string"/>
+ $includeFlightPlan" style="query" type=":string"/>
+ $maxPositions" style="query" type=":string"/>
+ $maxPositionAgeMinutes" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/json; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/status/{airport}/dep/{year}/{month}/{day}/{hourOfDay}">
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $hourOfDay" style="template" type=":int"/>
+ $day" style="template" type=":int"/>
+ $airport" style="template" type=":string"/>
+<method id="airportStatus_dep" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $numHours" style="query" type=":string"/>
+ $carrier" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/json; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/status/{airport}/arr/{year}/{month}/{day}/{hourOfDay}">
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $hourOfDay" style="template" type=":int"/>
+ $day" style="template" type=":int"/>
+ $airport" style="template" type=":string"/>
+<method id="airportStatus_arr" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $numHours" style="query" type=":string"/>
+ $carrier" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/json; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+</resource>
+<resource path="/resources/v2/fleet/">
+<method id="getHelp" $GET">
+<response>
+<representation mediaType="application/json; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/v2/xml/route">
+<resource path="/status/{departureAirport}/{arrivalAirport}/dep/{year}/{month}/{day}">
+ $departureAirport" style="template" type=":string"/>
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $arrivalAirport" style="template" type=":string"/>
+ $day" style="template" type=":int"/>
+<method id="routeStatus_departing" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $hourOfDay" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $numHours" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/xml; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/status/{departureAirport}/{arrivalAirport}/arr/{year}/{month}/{day}">
+ $departureAirport" style="template" type=":string"/>
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $arrivalAirport" style="template" type=":string"/>
+ $day" style="template" type=":int"/>
+<method id="routeStatus_arriving" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $hourOfDay" style="query" type=":string"/>
+ $numHours" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/xml; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+</resource>
+<resource path="/v2/xml/flight">
+<resource path="/tracks/{carrier}/{flight}/dep/{year}/{month}/{day}">
+ $flight" style="template" type=":string"/>
+ $carrier" style="template" type=":string"/>
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $day" style="template" type=":int"/>
+<method id="flightTrack_dep" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $hourOfDay" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $numHours" style="query" type=":string"/>
+ $includeFlightPlan" style="query" type=":string"/>
+ $airport" style="query" type=":string"/>
+ $maxPositions" style="query" type=":string"/>
+ $maxPositionAgeMinutes" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/xml; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/tracks/{carrier}/{flight}/arr/{year}/{month}/{day}">
+ $flight" style="template" type=":string"/>
+ $carrier" style="template" type=":string"/>
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $day" style="template" type=":int"/>
+<method id="flightTrack_arr" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $hourOfDay" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $numHours" style="query" type=":string"/>
+ $includeFlightPlan" style="query" type=":string"/>
+ $airport" style="query" type=":string"/>
+ $maxPositions" style="query" type=":string"/>
+ $maxPositionAgeMinutes" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/xml; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/track/{flightId}">
+ $flightId" style="template" type=":long"/>
+<method id="flightTrack_fhid" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $includeFlightPlan" style="query" type=":string"/>
+ $maxPositions" style="query" type=":string"/>
+ $maxPositionAgeMinutes" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/xml; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/status/{flightId}">
+ $flightId" style="template" type=":long"/>
+<method id="flightStatus_fhid" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/xml; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/status/{carrier}/{flight}/dep/{year}/{month}/{day}">
+ $flight" style="template" type=":string"/>
+ $carrier" style="template" type=":string"/>
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $day" style="template" type=":int"/>
+<method id="flightStatus_dep" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $airport" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/xml; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/status/{carrier}/{flight}/arr/{year}/{month}/{day}">
+ $flight" style="template" type=":string"/>
+ $carrier" style="template" type=":string"/>
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $day" style="template" type=":int"/>
+<method id="flightStatus_arr" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $airport" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/xml; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+</resource>
+<resource path="/resources/v2/airport/">
+<method id="getHelp" $GET">
+<response>
+<representation mediaType="application/json; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/v2/xml/flightextended">
+<resource path="/multiple">
+<method id="flightStatusExtended_multiple" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $flightIds" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/xml; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+</resource>
+<resource path="/v2/fleet/">
+<resource path="/tracks/{carrier}">
+ $carrier" style="template" type=":string"/>
+<method id="fleetTracks" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $includeFlightPlan" style="query" type=":string"/>
+ $maxPositions" style="query" type=":string"/>
+ $maxPositionAgeMinutes" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $codeshares" style="query" type=":string"/>
+ $airport" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="response" mediaType="*/*"/>
+</response>
+</method>
+</resource>
+<resource path="/status/{carrier}/dep/{year}/{month}/{day}/{hourOfDay}">
+ $carrier" style="template" type=":string"/>
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $hourOfDay" style="template" type=":int"/>
+ $day" style="template" type=":int"/>
+<method id="fleetStatus_dep" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $numHours" style="query" type=":string"/>
+ $codeshares" style="query" type=":string"/>
+ $airport" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="response" mediaType="*/*"/>
+</response>
+</method>
+</resource>
+</resource>
+<resource path="/v2/json/flightsNear">
+<resource path="/{topLat}/{leftLon}/{bottomLat}/{rightLon}">
+ $topLat" style="template" type=":double"/>
+ $leftLon" style="template" type=":double"/>
+ $rightLon" style="template" type=":double"/>
+ $bottomLat" style="template" type=":double"/>
+<method id="flightsNear_box" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/json; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/{lat}/{lon}/{miles}">
+ $lon" style="template" type=":double"/>
+ $lat" style="template" type=":double"/>
+ $miles" style="template" type=":int"/>
+<method id="flightsNear_radius" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/json; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+</resource>
+<resource path="/v2/flight/">
+<resource path="/tracks/{carrier}/{flight}/dep/{year}/{month}/{day}">
+ $flight" style="template" type=":string"/>
+ $carrier" style="template" type=":string"/>
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $day" style="template" type=":int"/>
+<method id="flightTrack_dep" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $hourOfDay" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $numHours" style="query" type=":string"/>
+ $includeFlightPlan" style="query" type=":string"/>
+ $airport" style="query" type=":string"/>
+ $maxPositions" style="query" type=":string"/>
+ $maxPositionAgeMinutes" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="response" mediaType="*/*"/>
+</response>
+</method>
+</resource>
+<resource path="/tracks/{carrier}/{flight}/arr/{year}/{month}/{day}">
+ $flight" style="template" type=":string"/>
+ $carrier" style="template" type=":string"/>
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $day" style="template" type=":int"/>
+<method id="flightTrack_arr" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $hourOfDay" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $numHours" style="query" type=":string"/>
+ $includeFlightPlan" style="query" type=":string"/>
+ $airport" style="query" type=":string"/>
+ $maxPositions" style="query" type=":string"/>
+ $maxPositionAgeMinutes" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="response" mediaType="*/*"/>
+</response>
+</method>
+</resource>
+<resource path="/track/{flightId}">
+ $flightId" style="template" type=":long"/>
+<method id="flightTrack_fhid" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $includeFlightPlan" style="query" type=":string"/>
+ $maxPositions" style="query" type=":string"/>
+ $maxPositionAgeMinutes" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="response" mediaType="*/*"/>
+</response>
+</method>
+</resource>
+<resource path="/status/{flightId}">
+ $flightId" style="template" type=":long"/>
+<method id="flightStatus_fhid" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="response" mediaType="*/*"/>
+</response>
+</method>
+</resource>
+<resource path="/status/{carrier}/{flight}/dep/{year}/{month}/{day}">
+ $flight" style="template" type=":string"/>
+ $carrier" style="template" type=":string"/>
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $day" style="template" type=":int"/>
+<method id="flightStatus_dep" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $airport" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="response" mediaType="*/*"/>
+</response>
+</method>
+</resource>
+<resource path="/status/{carrier}/{flight}/arr/{year}/{month}/{day}">
+ $flight" style="template" type=":string"/>
+ $carrier" style="template" type=":string"/>
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $day" style="template" type=":int"/>
+<method id="flightStatus_arr" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $airport" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="response" mediaType="*/*"/>
+</response>
+</method>
+</resource>
+</resource>
+<resource path="/v2/json/flightextended">
+<resource path="/multiple">
+<method id="flightStatusExtended_multiple" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $flightIds" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/json; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+</resource>
+<resource path="/v2/json/fleet">
+<resource path="/tracks/{carrier}">
+ $carrier" style="template" type=":string"/>
+<method id="fleetTracks" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $includeFlightPlan" style="query" type=":string"/>
+ $maxPositions" style="query" type=":string"/>
+ $maxPositionAgeMinutes" style="query" type=":string"/>
+ $sourceType" style="query" type=":string"/>
+ $codeshares" style="query" type=":string"/>
+ $airport" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/json; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/status/{carrier}/dep/{year}/{month}/{day}/{hourOfDay}">
+ $carrier" style="template" type=":string"/>
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $hourOfDay" style="template" type=":int"/>
+ $day" style="template" type=":int"/>
+<method id="fleetStatus_dep" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $numHours" style="query" type=":string"/>
+ $codeshares" style="query" type=":string"/>
+ $airport" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/json; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+</resource>
+<resource path="/resources/v2/route/">
+<method id="getHelp" $GET">
+<response>
+<representation mediaType="application/json; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/v2/jsonp/route/">
+<resource path="/status/{departureAirport}/{arrivalAirport}/dep/{year}/{month}/{day}">
+ $departureAirport" style="template" type=":string"/>
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $arrivalAirport" style="template" type=":string"/>
+ $day" style="template" type=":int"/>
+<method id="routeStatus_departing" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $hourOfDay" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $numHours" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $callback" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/x-javascript; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+<resource path="/status/{departureAirport}/{arrivalAirport}/arr/{year}/{month}/{day}">
+ $departureAirport" style="template" type=":string"/>
+ $month" style="template" type=":int"/>
+ $year" style="template" type=":int"/>
+ $arrivalAirport" style="template" type=":string"/>
+ $day" style="template" type=":int"/>
+<method id="routeStatus_arriving" $GET">
+<request>
+ $appId" style="query" type=":string"/>
+ $appKey" style="query" type=":string"/>
+ $hourOfDay" style="query" type=":string"/>
+ $utc" style="query" type=":string"/>
+ $numHours" style="query" type=":string"/>
+ $codeType" style="query" type=":string"/>
+ $maxFlights" style="query" type=":string"/>
+ $callback" style="query" type=":string"/>
+ $extendedOptions" style="query" type=":string"/>
+</request>
+<response>
+<representation mediaType="application/x-javascript; charset=UTF-8"/>
+</response>
+</method>
+</resource>
+</resource>
+</resources>
+</application>
